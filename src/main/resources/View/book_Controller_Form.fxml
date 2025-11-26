@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="680.0" prefWidth="938.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.book.book_Form_Controller">
+   <children>
+      <TableView fx:id="tblbook" layoutY="327.0" prefHeight="314.0" prefWidth="932.0">
+        <columns>
+          <TableColumn fx:id="colbook_id" prefWidth="75.0" text="Book_Id" />
+          <TableColumn fx:id="coltitle" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="colauthor" prefWidth="75.0" text="Author" />
+            <TableColumn fx:id="colcategory" prefWidth="75.0" text="Category" />
+            <TableColumn fx:id="colisbn" prefWidth="75.0" text="Isbn" />
+            <TableColumn fx:id="colpublisher" prefWidth="75.0" text="Publisher" />
+            <TableColumn fx:id="colpublisher_year" prefWidth="95.20001220703125" text="Publisher_Year" />
+            <TableColumn fx:id="coldescription" prefWidth="95.20001220703125" text="Description" />
+            <TableColumn fx:id="collanguages" prefWidth="95.20001220703125" text="Languages" />
+            <TableColumn fx:id="colcopies" prefWidth="95.20001220703125" text="copies" />
+            <TableColumn fx:id="colstatus" prefWidth="95.20001220703125" text="Status" />
+        </columns>
+      </TableView>
+      <Label layoutX="101.0" layoutY="58.0" text="Book Id" />
+      <TextField fx:id="txtid" layoutX="174.0" layoutY="54.0" />
+      <Label layoutX="101.0" layoutY="98.0" text="Title" />
+      <TextField fx:id="txttitle" layoutX="174.0" layoutY="94.0" />
+      <Label layoutX="101.0" layoutY="136.0" text="Author" />
+      <TextField fx:id="txtauthor" layoutX="174.0" layoutY="132.0" />
+      <Label layoutX="101.0" layoutY="172.0" text="Category" />
+      <TextField fx:id="txtcategory" layoutX="174.0" layoutY="168.0" />
+      <Label layoutX="435.0" layoutY="50.0" text="Description" />
+      <TextField fx:id="txtdescription" layoutX="508.0" layoutY="46.0" />
+      <Label layoutX="435.0" layoutY="90.0" text="Languages" />
+      <TextField fx:id="txtlanguages" layoutX="508.0" layoutY="86.0" />
+      <Label layoutX="435.0" layoutY="128.0" text="Copies" />
+      <TextField fx:id="txtcopies" layoutX="508.0" layoutY="124.0" />
+      <Label layoutX="435.0" layoutY="164.0" text="Status" />
+      <TextField fx:id="txtstatus" layoutX="508.0" layoutY="160.0" />
+      <Label layoutX="101.0" layoutY="207.0" text="Isbn" />
+      <TextField fx:id="txtisbn" layoutX="174.0" layoutY="203.0" />
+      <Label layoutX="101.0" layoutY="245.0" text="Publisher" />
+      <TextField fx:id="txtpublisher" layoutX="174.0" layoutY="241.0" />
+      <Label layoutX="101.0" layoutY="281.0" text="Publish Year" />
+      <TextField fx:id="txtpublish_year" layoutX="174.0" layoutY="277.0" />
+      <Button layoutX="453.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnAddbook" text="Add" />
+      <Button layoutX="527.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnUpdatebook" text="Update" />
+      <Button layoutX="613.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnDeletebook" text="delete" />
+   </children>
+</AnchorPane>
