@@ -59,7 +59,7 @@ public class dashboard_Controller {
     @FXML
     void btn_book_Management_On_Action(ActionEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/book_Controller_Form.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

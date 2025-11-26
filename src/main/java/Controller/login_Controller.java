@@ -35,7 +35,7 @@ public class login_Controller {
 
 
             try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/dashboard_Controller_Form.fxml"))));
                 stage.show();
             } catch (IOException e) {
                 throw new RuntimeException(e);

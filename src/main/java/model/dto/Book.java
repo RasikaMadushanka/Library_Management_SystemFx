@@ -17,7 +17,7 @@ public class Book {
     private String publish_year;
     private String description;
     private String language;
-    private String copies;
+    private int copies;
     private String status;
 
 
