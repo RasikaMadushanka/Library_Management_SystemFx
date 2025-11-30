@@ -1,47 +1,30 @@
-📚 Library Management System — JavaFX
+# 📚 Library Management System — JavaFX
 
-A modern and user-friendly Library Management System built using JavaFX, MySQL, and Object-Oriented Programming principles.
-This system allows easy management of books, categories, borrowers, and lending operations.
+A modern **Library Management System** developed using **JavaFX** and **MySQL**.  
+This project helps manage books, categories, and borrowing operations with a clean UI and organized structure — perfect for learning JavaFX and building practical applications.
 
-🚀 Features
-📘 Book Management
+---
 
-Add, edit, delete books
+## 🚀 Features
 
-Track author, category, publisher, ISBN
+### 📘 Book Management
+- Add, update, and delete books  
+- Track authors, categories, publishers, ISBN  
+- Maintain multiple copies  
+- Automatic status handling (Available / Borrowed)
 
-Keep multiple copies
+### 🔄 Borrow & Return
+- Issue books to members  
+- Prevent issuing when copies are unavailable  
+- Return books and update status  
 
-Book status (Available / Borrowed / Not Available)
+### 🔍 Search & Filtering
+- Search books by title, author, or ISBN  
+- Filter by category or status  
 
-👥 Member Management (optional if added)
+### 🎨 JavaFX UI
+- User-friendly, clean interface  
+- Responsive layout  
+- Custom CSS styling  
 
-Register members
-
-Edit member profiles
-
-View member list
-
-🔄 Borrow & Return
-
-Issue books to members
-
-Auto-update availability
-
-Manage return dates
-
-Prevent issuing if copies are zero
-
-🔍 Search & Filter
-
-Search books by title, author, or ISBN
-
-Filter by category or availability
-
-🎨 Modern JavaFX Interface
-
-Clean and responsive UI
-
-Custom styling through CSS
-
-User-friendly navigation
+---
