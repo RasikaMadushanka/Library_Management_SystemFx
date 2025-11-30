@@ -88,6 +88,22 @@ public class book_Form_Controller implements Initializable {
 
     @FXML
     void btnAddbook(ActionEvent event) {
+        String id=txtid.getText();
+        String title=txttitle.getText();
+        String author=txtauthor.getText();
+        String category=txtcategory.getText();
+        String isbn=txtisbn.getText();
+        String publisher=txtpublisher.getText();
+        String publis_year=txtpublish_year.getText();
+        String description = txtdescription.getText();
+        String language = txtlanguages.getText();
+        int copies = Integer.parseInt(txtcopies.getText());
+        String status=txtstatus.getText();
+        bookService.addbook(id,title,author,category,isbn,publisher,publis_year,description,language,copies,status);
+        loadBook();
+        clear();
+
+
 
 
     }
@@ -95,13 +111,42 @@ public class book_Form_Controller implements Initializable {
     @FXML
     void btnDeletebook(ActionEvent event) {
         bookService.deletebook(txtid.getText());
-        loadEmployee();
+        loadBook();
+        clear();
 
     }
 
     @FXML
     void btnUpdatebook(ActionEvent event) {
+        String id=txtid.getText();
+        String title=txttitle.getText();
+        String author=txtauthor.getText();
+        String category=txtcategory.getText();
+        String isbn=txtisbn.getText();
+        String publisher=txtpublisher.getText();
+        String publish_year=txtpublish_year.getText();
+        String description=txtdescription.getText();
+        String language=txtlanguages.getText();
+        String copies =txtcopies.getText();
+        String status=txtstatus.getText();
+        bookService.updatebook(id,title,author,category,isbn,publisher,publish_year,description,language,copies,status);
+        loadBook();
+        clear();
 
+
+    }
+    void clear(){
+        txtid.clear();
+        txttitle.clear();
+        txtauthor.clear();
+        txtcategory.clear();
+        txtisbn.clear();
+        txtpublisher.clear();
+        txtpublish_year.clear();
+        txtdescription.clear();
+        txtlanguages.clear();
+        txtcopies.clear();
+        txtstatus.clear();
     }
 
     @Override
@@ -117,7 +162,7 @@ public class book_Form_Controller implements Initializable {
         collanguages.setCellValueFactory(new PropertyValueFactory<>("language"));
         colcopies.setCellValueFactory(new PropertyValueFactory<>("copies"));
         colstatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-        loadEmployee();
+        loadBook();
         tblbook.getSelectionModel().selectedItemProperty().addListener((observable,oldvalue,newvalue)->{
             Book bookDto=newvalue;
             if (bookDto != null){
@@ -127,7 +172,7 @@ public class book_Form_Controller implements Initializable {
                 txtcategory.setText(bookDto.getCategory());
                 txtisbn.setText(bookDto.getIsbn());
                 txtpublisher.setText(bookDto.getPublisher());
-                txtpublish_year.setText(bookDto.getPublish_year());
+                txtpublish_year.setText(String.valueOf(bookDto.getPublish_year()));
                 txtdescription.setText(bookDto.getDescription());
                 txtlanguages.setText(bookDto.getLanguage());
                 txtcopies.setText(String.valueOf(bookDto.getCopies()));
@@ -138,7 +183,7 @@ public class book_Form_Controller implements Initializable {
         });
     }
 
-    private void loadEmployee(){
+    private void loadBook(){
         bookDtos.clear();;
         tblbook.setItems(bookService.getAllbook());
     }
