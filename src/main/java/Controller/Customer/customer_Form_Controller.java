@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.dto.Book;
 import model.dto.customer_Dto;
 
 import java.awt.event.ActionEvent;
@@ -105,9 +107,29 @@ public class customer_Form_Controller implements Initializable {
 
 
     }
+    void clear(){
+        txtid.clear();
+        txtaddresss.clear();
+        txtdate.clear();
+        txtname.clear();
+        txtemail.clear();
+        txtphone.clear();
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        colid.setCellValueFactory(new PropertyValueFactory<>(""));
+        tblcustomer.getSelectionModel().selectedItemProperty().addListener((observable,oldvalue,newvalue)->{
+            customer_Dto customerDto=newvalue;
+            if (customerDto != null) {
+                txtid.setText(customerDto.getCustomer_id());
+                
+
+
+            }
+
+        });
 
     }
 }
