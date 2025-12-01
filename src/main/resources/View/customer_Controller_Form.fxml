@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="657.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Customer.customer_Form_Controller">
+   <children>
+      <TableView fx:id="tblcustomer" layoutX="43.0" layoutY="386.0" prefHeight="234.0" prefWidth="738.0">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="75.0" text="Customer Id" />
+          <TableColumn fx:id="colname" prefWidth="108.0" text="Name" />
+            <TableColumn fx:id="colemail" prefWidth="120.800048828125" text="Email" />
+            <TableColumn fx:id="coladdress" prefWidth="163.99996948242188" text="Address" />
+            <TableColumn fx:id="colphone" prefWidth="143.199951171875" text="Phone Number" />
+            <TableColumn fx:id="colemail1" minWidth="0.0" prefWidth="126.4000244140625" text="Date" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtname" layoutX="289.0" layoutY="151.0" />
+      <TextField fx:id="txtemail" layoutX="289.0" layoutY="197.0" />
+      <TextField fx:id="txtid" layoutX="289.0" layoutY="103.0" />
+      <TextField fx:id="txtdate" layoutX="289.0" layoutY="283.0" />
+      <TextField fx:id="txtaddresss" layoutX="289.0" layoutY="240.0" />
+      <Label layoutX="118.0" layoutY="107.0" text="Customer Id" />
+      <Label layoutX="118.0" layoutY="155.0" text="Name" />
+      <Label layoutX="118.0" layoutY="201.0" text="Email" />
+      <Label layoutX="120.0" layoutY="244.0" text="Address" />
+      <Label layoutX="120.0" layoutY="287.0" text="Date" />
+      <Button layoutX="607.0" layoutY="125.0" mnemonicParsing="false" onAction="#btnadd_On_Action" text="Add" />
+      <Button layoutX="607.0" layoutY="305.0" mnemonicParsing="false" onAction="#btndelete_On_Action" text="Delete" />
+      <Button layoutX="605.0" layoutY="206.0" mnemonicParsing="false" onAction="#btnupdate_On_Action" text="Update" />
+      <TextField fx:id="txtphone" layoutX="287.0" layoutY="316.0" />
+      <Label layoutX="118.0" layoutY="320.0" text="Phone" />
+   </children>
+</AnchorPane>

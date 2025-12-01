@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class book_Form_Controller implements Initializable {
-    ObservableList<java.awt.print.Book> bookDtos= FXCollections.observableArrayList();
+    ObservableList<Book> bookDtos= FXCollections.observableArrayList();
     book_Service bookService=new book_Controller();
 
     @FXML
