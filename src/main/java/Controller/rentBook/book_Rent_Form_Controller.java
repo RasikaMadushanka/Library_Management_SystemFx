@@ -64,6 +64,9 @@ public class book_Rent_Form_Controller {
 
     @FXML
     void btn_Add_On_action(ActionEvent event) {
+        String id = txtrent_id.getText();
+
+
 
     }
 
