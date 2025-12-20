@@ -103,6 +103,9 @@ public class book_Rent_Form_Controller implements Initializable {
 
     @FXML
     void btn_Delete_On_action(ActionEvent event) {
+        bookRentService.deletebookRent(txtrent_id.getText());
+        loadrentbook();
+        clear();
 
     }
 
