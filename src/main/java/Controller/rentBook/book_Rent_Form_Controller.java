@@ -108,6 +108,18 @@ public class book_Rent_Form_Controller implements Initializable {
 
     @FXML
     void btn_Update_On_action(ActionEvent event) {
+        String id = txtrent_id.getText();
+        String customer_Id = txtcustomer_id.getText();
+        String book_id=txtbook_id.getText();
+        String rent_date = txtrent_date.getText();
+        String due_date = txtdue_date.getText();
+        String return_date = textreturndate.getText();
+        double price = Double.parseDouble(txtbook_price.getText());
+        double fine = Double.parseDouble(txtfine.getText());
+        String status = txtstatus.getText();
+        bookRentService.updatebookRent(id,customer_Id,book_id,rent_date,due_date,return_date,price,fine,status);
+        loadrentbook();
+        clear();
 
     }
     void clear(){
