@@ -1,12 +1,18 @@
 package Controller.rentBook;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import model.dto.bookRent_Dto;
+
 
 public class book_Rent_Form_Controller {
+    ObservableList<bookRent_Dto>bookRentDtos = javafx.collections.FXCollections.observableArrayList();
+    book_Rent_Service bookRentService = new book_Rent_Controller();
+
 
     @FXML
     private TableColumn<?, ?> colbook_id;
@@ -36,7 +42,7 @@ public class book_Rent_Form_Controller {
     private TableColumn<?, ?> colstatus;
 
     @FXML
-    private TableView<?> tblrentbook;
+    private TableView<bookRent_Dto> tblrentbook;
 
     @FXML
     private TextField txtbook_id;
@@ -62,9 +68,16 @@ public class book_Rent_Form_Controller {
     @FXML
     private TextField txtstatus;
 
+    void loadrentbook(){
+        bookRentDtos.clear();
+        tblrentbook.setItems(bookRentService.getallbookRent());
+    }
+
     @FXML
     void btn_Add_On_action(ActionEvent event) {
         String id = txtrent_id.getText();
+        String customer_Id
+
 
 
 
