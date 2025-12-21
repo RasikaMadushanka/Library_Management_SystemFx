@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="570.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.supplier.supplier_Form_Controller">
+   <children>
+      <TableView fx:id="tblsupplier" layoutX="96.0" layoutY="254.0" prefHeight="270.0" prefWidth="676.0">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="75.0" text="Supplier ID" />
+          <TableColumn fx:id="colname" prefWidth="99.199951171875" text="Supplier Name" />
+            <TableColumn fx:id="colemail" prefWidth="99.199951171875" text="Email" />
+            <TableColumn fx:id="colphone" prefWidth="99.199951171875" text="Phone" />
+            <TableColumn fx:id="coladdress" prefWidth="99.199951171875" text="Address" />
+            <TableColumn fx:id="colcompany" prefWidth="99.199951171875" text="Company" />
+            <TableColumn fx:id="coldate" prefWidth="99.199951171875" text="Date" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtId" layoutX="156.0" layoutY="69.0" />
+      <TextField fx:id="txtname" layoutX="156.0" layoutY="115.0" />
+      <TextField fx:id="txtemail" layoutX="156.0" layoutY="161.0" />
+      <TextField fx:id="txtphone" layoutX="156.0" layoutY="205.0" />
+      <TextField fx:id="txtaddress" layoutX="602.0" layoutY="69.0" />
+      <TextField fx:id="txtcompany" layoutX="602.0" layoutY="115.0" />
+      <Label layoutX="42.0" layoutY="73.0" text="Supplier Id" />
+      <Label layoutX="42.0" layoutY="119.0" text="Supplier Name" />
+      <Label layoutX="42.0" layoutY="165.0" text="Email" />
+      <Label layoutX="42.0" layoutY="209.0" text="Phone" />
+      <Label layoutX="493.0" layoutY="73.0" text="Address" />
+      <Label layoutX="493.0" layoutY="119.0" text="Company" />
+      <Button layoutX="523.0" layoutY="214.0" mnemonicParsing="false" onAction="#btn_add_On_Action" text="Add" />
+      <Button layoutX="600.0" layoutY="214.0" mnemonicParsing="false" onAction="#btn_Update_On_Action" text="Update" />
+      <Button layoutX="675.0" layoutY="214.0" mnemonicParsing="false" onAction="#btn_Delete_On_Action" text="Delete" />
+      <TextField fx:id="txtdate" layoutX="607.0" layoutY="148.0" />
+      <Label layoutX="498.0" layoutY="152.0" text="Date" />
+   </children>
+</AnchorPane>

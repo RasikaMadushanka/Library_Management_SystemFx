@@ -107,10 +107,7 @@ public class book_Controller implements book_Service {
                         resultSet.getString("description"),
                         resultSet.getString("language"),
                         resultSet.getInt("copies"),
-                        resultSet.getString("status")
-
-                        )
-                );
+                        resultSet.getString("status")));
             }
 
         } catch (SQLException e) {

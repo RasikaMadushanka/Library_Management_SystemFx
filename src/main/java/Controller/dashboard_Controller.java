@@ -14,7 +14,7 @@ public class dashboard_Controller {
     @FXML
     void btn_Customer_Management_On_Action(ActionEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/customer_Controller_Form.fxml"))));
 
         } catch (IOException e) {
             throw new RuntimeException(e);

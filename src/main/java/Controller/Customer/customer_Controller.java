@@ -16,13 +16,13 @@ public class customer_Controller implements customer_Service{
             Connection connection = DBConnection.getInstance().getConnection();
             String SQL = "INSERT INTO customer VALUES (?,?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setObject(1,"");
-            preparedStatement.setObject(2,"");
-            preparedStatement.setObject(3,"");
-            preparedStatement.setObject(4,"");
-            preparedStatement.setObject(5,"");
-            preparedStatement.setObject(6,"");
-            preparedStatement.executeQuery();
+            preparedStatement.setObject(1,customer_Id);
+            preparedStatement.setObject(2,name);
+            preparedStatement.setObject(3,phone);
+            preparedStatement.setObject(4,email);
+            preparedStatement.setObject(5,address);
+            preparedStatement.setObject(6,date);
+            preparedStatement.execute();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -34,7 +34,7 @@ public class customer_Controller implements customer_Service{
     public void updateCustomer(String customer_Id, String name, String phone, String email, String address, String date) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            String SQL = "UPDATE customer SET full_name=?,phone=?,email=?,address=?,DATE=? WHERE=customer_id";
+            String SQL = "UPDATE customer SET full_name=?, phone=?, email=?, address=?, joined_date=? WHERE customer_id=?";
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setObject(1,name);
             preparedStatement.setObject(2,phone);
@@ -53,9 +53,9 @@ public class customer_Controller implements customer_Service{
     public void deleteCustomer(String customer_Id) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            String SQL = "DELETE FROM customer WHERE customer_id=?";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setObject(1,customer_Id);
+            PreparedStatement pstm = connection.prepareStatement("DELETE FROM customer WHERE customer_Id=?");
+            pstm.setString(1, customer_Id);
+            pstm.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -72,12 +72,12 @@ public class customer_Controller implements customer_Service{
             ResultSet resultSet = preparedStatement.executeQuery();
           while (resultSet.next()){
               customerDetail.add(new customer_Dto(
-                      resultSet.getString(""),
-                      resultSet.getString(""),
-                      resultSet.getString(""),
-                      resultSet.getString(""),
-                      resultSet.getString(""),
-                      resultSet.getString("")
+                      resultSet.getString("customer_id"),
+                      resultSet.getString("full_name"),
+                      resultSet.getString("phone"),
+                      resultSet.getString("email"),
+                      resultSet.getString("address"),
+                      resultSet.getString("joined_date")
               ));
 
 
