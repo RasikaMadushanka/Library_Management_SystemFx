@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controller.returnbook.return_book_Form_Controller"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="613.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.returnbook.return_book_Form_Controller">
+   <children>
+      <TableView fx:id="returntable" layoutX="100.0" layoutY="298.0" prefHeight="200.0" prefWidth="860.0">
+        <columns>
+          <TableColumn fx:id="colreturn_id" prefWidth="75.0" text="Return Id" />
+          <TableColumn fx:id="colrent_id" prefWidth="75.0" text="Rent Id" />
+            <TableColumn fx:id="colcustomer_id" prefWidth="75.0" text="Customer Id" />
+            <TableColumn fx:id="colbook_id" prefWidth="75.0" text="Book Id" />
+            <TableColumn fx:id="colreturn_date" prefWidth="75.0" text="Return Date" />
+            <TableColumn fx:id="colfine" prefWidth="75.0" text="Fine" />
+            <TableColumn fx:id="colbook_price" prefWidth="75.0" text="Book Price" />
+            <TableColumn fx:id="collate_days" prefWidth="75.0" text="Late days" />
+            <TableColumn fx:id="coldailyfee" prefWidth="87.99993896484375" text="Daily late Fee" />
+            <TableColumn fx:id="colextra_fee" prefWidth="87.99993896484375" text="Extar Fee" />
+            <TableColumn fx:id="colstatus" prefWidth="87.99993896484375" text="Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="826.0" layoutY="107.0" mnemonicParsing="false" onAction="#btn_add_On_action" text="Add" />
+      <TextField fx:id="txtrent_id" layoutX="312.0" layoutY="116.0" />
+      <Label layoutX="203.0" layoutY="85.0" text="Return ID" />
+      <Label layoutX="203.0" layoutY="120.0" text="Rent Id" />
+      <TextField fx:id="txtreturn_id" layoutX="312.0" layoutY="81.0" />
+      <Label layoutX="203.0" layoutY="155.0" text="Customer Id" />
+      <TextField fx:id="txtcustomer_id" layoutX="312.0" layoutY="151.0" />
+      <Label layoutX="203.0" layoutY="192.0" text="Book Id" />
+      <TextField fx:id="txtbook_id" layoutX="314.0" layoutY="188.0" />
+      <Label layoutX="203.0" layoutY="228.0" text="Return Date" />
+      <TextField fx:id="txtreturn_date" layoutX="312.0" layoutY="224.0" />
+      <TextField fx:id="txtbook_price" layoutX="622.0" layoutY="106.0" />
+      <Label layoutX="513.0" layoutY="75.0" text="Fine" />
+      <Label layoutX="513.0" layoutY="110.0" text="Book Price" />
+      <TextField fx:id="txtFine" layoutX="622.0" layoutY="71.0" />
+      <Label layoutX="513.0" layoutY="145.0" text="Late Days" />
+      <TextField fx:id="txtlate_days" layoutX="622.0" layoutY="141.0" />
+      <Label layoutX="513.0" layoutY="182.0" text="Daily late Fee" />
+      <TextField fx:id="txtdailylate_fee" layoutX="624.0" layoutY="178.0" />
+      <Label layoutX="513.0" layoutY="218.0" text="Extra Fee" />
+      <TextField fx:id="txtextra_fee" layoutX="622.0" layoutY="214.0" />
+      <Label layoutX="513.0" layoutY="250.0" text="Status" />
+      <TextField fx:id="txtstatus" layoutX="622.0" layoutY="246.0" />
+      <Button layoutX="826.0" layoutY="151.0" mnemonicParsing="false" onAction="#btnUpdate_On_Action" text="Update" />
+      <Button layoutX="829.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnDelete_On_Action" text="Delete" />
+   </children>
 </AnchorPane>
