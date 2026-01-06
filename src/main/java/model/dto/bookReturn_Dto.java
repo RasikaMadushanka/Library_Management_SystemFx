@@ -19,8 +19,9 @@ public class bookReturn_Dto {
     private double bookPrice;     // For lost/damage fee
 
     private int lateDays;         // How many days late?
-    private double extraFee;      // Additional penalty if very late
     private double dailyLateFee;  // Per-day fee for late return
+    private double extraFee;      // Additional penalty if very late
+
 
     private String status;        // RETURNED / LATE_RETURNED / LOST
 }
