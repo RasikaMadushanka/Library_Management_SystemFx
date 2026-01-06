@@ -26,7 +26,7 @@ public class dashboard_Controller {
     @FXML
     void btn_Renatal_Management_On_Action(ActionEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/book_Rent_Controller_Form.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -37,7 +37,7 @@ public class dashboard_Controller {
     @FXML
     void btn_Report_Management_On_Action(ActionEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/book_Rent_Controller_Form.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -48,7 +48,7 @@ public class dashboard_Controller {
     @FXML
     void btn_Return_Management_On_Action(ActionEvent event) {
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/book_Return_Controller_Form.fxml"))));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

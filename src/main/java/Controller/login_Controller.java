@@ -42,6 +42,11 @@ public class login_Controller {
             }
 
         }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Info");
+            alert.setHeaderText(null);
+            alert.setContentText(" Login in uncessfully !! check your password or email");
+            alert.showAndWait();
 
 
         }
