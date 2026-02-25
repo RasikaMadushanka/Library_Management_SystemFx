@@ -101,13 +101,13 @@ public class supplier_Form_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colid.setCellValueFactory(new PropertyValueFactory<>(""));
-        colname.setCellValueFactory(new PropertyValueFactory<>(""));
-        colphone.setCellValueFactory(new PropertyValueFactory<>(""));
-        colemail.setCellValueFactory(new PropertyValueFactory<>(""));
-        coladdress.setCellValueFactory(new PropertyValueFactory<>(""));
-        colcompany.setCellValueFactory(new PropertyValueFactory<>(""));
-        coldate.setCellValueFactory(new PropertyValueFactory<>(""));
+        colid.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
+        colname.setCellValueFactory(new PropertyValueFactory<>("supplierName"));
+        colphone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        colemail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        coladdress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colcompany.setCellValueFactory(new PropertyValueFactory<>("company"));
+        coldate.setCellValueFactory(new PropertyValueFactory<>("date"));
         loadsupplier();
         tblsupplier.getSelectionModel().selectedItemProperty().addListener((observable,oldvalue,newvalue)-> {
             supplier_Dto supplierDto= newvalue;

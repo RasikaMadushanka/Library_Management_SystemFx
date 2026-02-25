@@ -81,7 +81,7 @@ public class customer_Form_Controller implements Initializable {
         colphone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         colemail.setCellValueFactory(new PropertyValueFactory<>("email"));
         coladdress.setCellValueFactory(new PropertyValueFactory<>("address"));
-        coldate.setCellValueFactory(new PropertyValueFactory<>("DATE"));
+        coldate.setCellValueFactory(new PropertyValueFactory<>("joinedDate"));
         loadcustomer();
         tblcustomer.getSelectionModel().selectedItemProperty().addListener((observable,oldvalue,newvalue)->{
             customer_Dto customerDto=newvalue;
@@ -91,7 +91,7 @@ public class customer_Form_Controller implements Initializable {
                 txtphone.setText(customerDto.getPhone());
                 txtemail.setText(customerDto.getEmail());
                 txtaddresss.setText(customerDto.getAddress());
-                txtdate.setText(String.valueOf(customerDto.getDATE()));
+                txtdate.setText(String.valueOf(customerDto.getJoinedDate()));
 
 
 
@@ -109,8 +109,8 @@ public class customer_Form_Controller implements Initializable {
         String Phone=txtphone.getText();
         String email=txtemail.getText();
         String address=txtaddresss.getText();
-        String date =txtdate.getText();
-        customer_service.addCustomer(Id,Name,Phone,email,address,date);
+        String created_date =txtdate.getText();
+        customer_service.addCustomer(Id,Name,Phone,email,address,created_date);
         loadcustomer();
         clear();
     }
@@ -121,9 +121,9 @@ public class customer_Form_Controller implements Initializable {
         String Phone=txtphone.getText();
         String email=txtemail.getText();
         String address=txtaddresss.getText();
-        String date =txtdate.getText();
+        String created_date =txtdate.getText();
 
-        customer_service.updateCustomer(Id,Name,Phone,email,address,date);
+        customer_service.updateCustomer(Id,Name,Phone,email,address,created_date);
         loadcustomer();
         clear();
     }

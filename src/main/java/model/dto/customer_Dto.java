@@ -13,6 +13,6 @@ public class customer_Dto {
    private String phone;
     private String email;
     private String address;
-    private String DATE;
+    private String joinedDate;
 
 }

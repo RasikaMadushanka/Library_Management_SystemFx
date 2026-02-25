@@ -9,6 +9,6 @@
       <Button layoutX="349.0" layoutY="146.0" mnemonicParsing="false" onAction="#btn_Customer_Management_On_Action" text="Customer Management" />
       <Button layoutX="358.0" layoutY="226.0" mnemonicParsing="false" onAction="#btn_Renatal_Management_On_Action" text="Renatal Managemnt" />
       <Button layoutX="347.0" layoutY="274.0" mnemonicParsing="false" onAction="#btn_Return_Management_On_Action" text="Return Managemnt" />
-      <Button layoutX="349.0" layoutY="321.0" mnemonicParsing="false" onAction="#btn_Report_Management_On_Action" text="Report Managemnt" />
+      <Button layoutX="349.0" layoutY="190.0" mnemonicParsing="false" onAction="#btn_Report_Management_On_Action" text="supplier Managemnt" />
    </children>
 </AnchorPane>

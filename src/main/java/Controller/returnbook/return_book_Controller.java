@@ -14,7 +14,7 @@ public class return_book_Controller implements return_book_Service{
     public void addReturnBook(String return_Id, String rent_Id, String customer_Id, String book_Id, String return_date, double fine, double book_price, int late_days, double extra_fee, double daily_latefee, String status) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            String SQL = "INSERT INTO book_return VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+            String SQL = "INSERT INTO book_return (return_Id, rent_Id, customer_Id, book_Id, return_date, fine, book_price, late_days, extra_fee, daily_latefee, status) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setObject(1,return_Id);
             preparedStatement.setObject(2,rent_Id);
@@ -49,7 +49,7 @@ public class return_book_Controller implements return_book_Service{
             preparedStatement.setObject(8,extra_fee);
             preparedStatement.setObject(9,daily_latefee);
             preparedStatement.setObject(10,status);
-            preparedStatement.setObject(11,return_date);
+            preparedStatement.setObject(11,return_Id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -83,14 +83,14 @@ public class return_book_Controller implements return_book_Service{
                 returnBookDetails.add(new bookReturn_Dto(
                         resultSet.getString("return_Id"),
                         resultSet.getString("rent_Id"),
-                        resultSet.getString("customer_Id"),
+                        resultSet.getString("customer_id"),
                         resultSet.getString("book_Id"),
                         resultSet.getString("return_date"),
                         resultSet.getDouble("fine"),
-                        resultSet.getDouble("book_price"),
-                        resultSet.getInt("late_days"),
-                        resultSet.getDouble("extra_fee"),
-                        resultSet.getDouble("daily_latefee"),
+                        resultSet.getDouble("bookPrice"),
+                        resultSet.getInt("lateDays"),
+                        resultSet.getDouble("dailyLateFee"),
+                        resultSet.getDouble("extraFee"),
                         resultSet.getString("status")
                 ));
             }

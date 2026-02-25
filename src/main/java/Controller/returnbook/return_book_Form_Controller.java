@@ -137,17 +137,17 @@ public class return_book_Form_Controller  implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colreturn_id.setCellValueFactory(new PropertyValueFactory<>(""));
-        colrent_id.setCellValueFactory(new PropertyValueFactory<>(""));
-        colcustomer_id.setCellValueFactory(new PropertyValueFactory<>(""));
-        colbook_id.setCellValueFactory(new PropertyValueFactory<>(""));
-        colreturn_date.setCellValueFactory(new PropertyValueFactory<>(""));
-        colfine.setCellValueFactory(new PropertyValueFactory<>(""));
-        colbook_price.setCellValueFactory(new PropertyValueFactory<>(""));
-        collate_days.setCellValueFactory(new PropertyValueFactory<>(""));
-        coldailyfee.setCellValueFactory(new PropertyValueFactory<>(""));
-        colextra_fee.setCellValueFactory(new PropertyValueFactory<>(""));
-        colstatus.setCellValueFactory(new PropertyValueFactory<>(""));
+        colreturn_id.setCellValueFactory(new PropertyValueFactory<>("returnId"));
+        colrent_id.setCellValueFactory(new PropertyValueFactory<>("rentId"));
+        colcustomer_id.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+        colbook_id.setCellValueFactory(new PropertyValueFactory<>("bookId"));
+        colreturn_date.setCellValueFactory(new PropertyValueFactory<>("returnDate"));
+        colfine.setCellValueFactory(new PropertyValueFactory<>("fine"));
+        colbook_price.setCellValueFactory(new PropertyValueFactory<>("bookPrice"));
+        collate_days.setCellValueFactory(new PropertyValueFactory<>("lateDays"));
+        coldailyfee.setCellValueFactory(new PropertyValueFactory<>("dailyLateFee"));
+        colextra_fee.setCellValueFactory(new PropertyValueFactory<>("extraFee"));
+        colstatus.setCellValueFactory(new PropertyValueFactory<>("status"));
         loadReturnBooks();
         returntable.getSelectionModel().selectedItemProperty().addListener((observable,oldvalue,newvalue)->{
             bookReturn_Dto bookReturnDto=newvalue;
