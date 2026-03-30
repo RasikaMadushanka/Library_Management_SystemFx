@@ -1,54 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
+<AnchorPane prefHeight="650.0" prefWidth="1026.0" style="-fx-background-color: #f5f6fa;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.returnbook.return_book_Form_Controller">
+    <children>
+        <AnchorPane prefHeight="60.0" prefWidth="1026.0" style="-fx-background-color: #2f3640;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="25.0" layoutY="16.0" text="Book Return Management" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
 
-<AnchorPane prefHeight="613.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.returnbook.return_book_Form_Controller">
-   <children>
-      <TableView fx:id="returntable" layoutX="100.0" layoutY="298.0" prefHeight="200.0" prefWidth="860.0">
-        <columns>
-          <TableColumn fx:id="colreturn_id" prefWidth="75.0" text="Return Id" />
-          <TableColumn fx:id="colrent_id" prefWidth="75.0" text="Rent Id" />
-            <TableColumn fx:id="colcustomer_id" prefWidth="75.0" text="Customer Id" />
-            <TableColumn fx:id="colbook_id" prefWidth="75.0" text="Book Id" />
-            <TableColumn fx:id="colreturn_date" prefWidth="75.0" text="Return Date" />
-            <TableColumn fx:id="colfine" prefWidth="75.0" text="Fine" />
-            <TableColumn fx:id="colbook_price" prefWidth="75.0" text="Book Price" />
-            <TableColumn fx:id="collate_days" prefWidth="75.0" text="Late days" />
-            <TableColumn fx:id="coldailyfee" prefWidth="87.99993896484375" text="Daily late Fee" />
-            <TableColumn fx:id="colextra_fee" prefWidth="87.99993896484375" text="Extar Fee" />
-            <TableColumn fx:id="colstatus" prefWidth="87.99993896484375" text="Status" />
-        </columns>
-      </TableView>
-      <Button layoutX="826.0" layoutY="107.0" mnemonicParsing="false" onAction="#btn_add_On_action" text="Add" />
-      <TextField fx:id="txtrent_id" layoutX="312.0" layoutY="116.0" />
-      <Label layoutX="203.0" layoutY="85.0" text="Return ID" />
-      <Label layoutX="203.0" layoutY="120.0" text="Rent Id" />
-      <TextField fx:id="txtreturn_id" layoutX="312.0" layoutY="81.0" />
-      <Label layoutX="203.0" layoutY="155.0" text="Customer Id" />
-      <TextField fx:id="txtcustomer_id" layoutX="312.0" layoutY="151.0" />
-      <Label layoutX="203.0" layoutY="192.0" text="Book Id" />
-      <TextField fx:id="txtbook_id" layoutX="314.0" layoutY="188.0" />
-      <Label layoutX="203.0" layoutY="228.0" text="Return Date" />
-      <TextField fx:id="txtreturn_date" layoutX="312.0" layoutY="224.0" />
-      <TextField fx:id="txtbook_price" layoutX="622.0" layoutY="106.0" />
-      <Label layoutX="513.0" layoutY="75.0" text="Fine" />
-      <Label layoutX="513.0" layoutY="110.0" text="Book Price" />
-      <TextField fx:id="txtFine" layoutX="622.0" layoutY="71.0" />
-      <Label layoutX="513.0" layoutY="145.0" text="Late Days" />
-      <TextField fx:id="txtlate_days" layoutX="622.0" layoutY="141.0" />
-      <Label layoutX="513.0" layoutY="182.0" text="Daily late Fee" />
-      <TextField fx:id="txtdailylate_fee" layoutX="624.0" layoutY="178.0" />
-      <Label layoutX="513.0" layoutY="218.0" text="Extra Fee" />
-      <TextField fx:id="txtextra_fee" layoutX="622.0" layoutY="214.0" />
-      <Label layoutX="513.0" layoutY="250.0" text="Status" />
-      <TextField fx:id="txtstatus" layoutX="622.0" layoutY="246.0" />
-      <Button layoutX="826.0" layoutY="151.0" mnemonicParsing="false" onAction="#btnUpdate_On_Action" text="Update" />
-      <Button layoutX="829.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnDelete_On_Action" text="Delete" />
-   </children>
+        <HBox layoutX="50.0" layoutY="85.0" spacing="30.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+            <children>
+                <GridPane hgap="20.0" vgap="12.0">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="100.0" prefWidth="110.0" />
+                        <ColumnConstraints minWidth="180.0" prefWidth="200.0" />
+                        <ColumnConstraints minWidth="100.0" prefWidth="110.0" />
+                        <ColumnConstraints minWidth="180.0" prefWidth="200.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" />
+                        <RowConstraints minHeight="30.0" prefHeight="35.0" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Return ID"> <font><Font name="System Bold" size="12.0"/></font></Label>
+                        <TextField fx:id="txtreturn_id" prefHeight="30.0" GridPane.columnIndex="1" />
+
+                        <Label text="Rent Id" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtrent_id" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Customer Id" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtcustomer_id" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label text="Book Id" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtbook_id" prefHeight="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <Label text="Return Date" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtreturn_date" prefHeight="30.0" promptText="YYYY-MM-DD" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <Label text="Fine" GridPane.columnIndex="2" />
+                        <TextField fx:id="txtFine" prefHeight="30.0" GridPane.columnIndex="3" />
+
+                        <Label text="Book Price" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtbook_price" prefHeight="30.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                        <Label text="Late Days" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtlate_days" prefHeight="30.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                        <Label text="Daily Late Fee" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtdailylate_fee" prefHeight="30.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                        <Label text="Extra Fee" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtextra_fee" prefHeight="30.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                        <Label text="Status" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtstatus" prefHeight="30.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                    </children>
+                </GridPane>
+
+                <VBox alignment="TOP_CENTER" spacing="15.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#btn_add_On_action" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #10ac84; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" text="ADD" />
+                        <Button mnemonicParsing="false" onAction="#btnUpdate_On_Action" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #2e86de; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" text="UPDATE" />
+                        <Button mnemonicParsing="false" onAction="#btnDelete_On_Action" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #ee5253; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" text="DELETE" />
+                    </children>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </HBox>
+
+        <TableView fx:id="returntable" layoutY="370.0" prefHeight="250.0" prefWidth="926.0" style="-fx-border-color: #dcdde1; -fx-background-radius: 5;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <columns>
+                <TableColumn fx:id="colreturn_id" prefWidth="75.0" text="Return ID" />
+                <TableColumn fx:id="colrent_id" prefWidth="75.0" text="Rent ID" />
+                <TableColumn fx:id="colcustomer_id" prefWidth="85.0" text="Cust ID" />
+                <TableColumn fx:id="colbook_id" prefWidth="75.0" text="Book ID" />
+                <TableColumn fx:id="colreturn_date" prefWidth="95.0" text="Date" />
+                <TableColumn fx:id="colfine" prefWidth="70.0" text="Fine" />
+                <TableColumn fx:id="colbook_price" prefWidth="80.0" text="Price" />
+                <TableColumn fx:id="collate_days" prefWidth="75.0" text="Late Days" />
+                <TableColumn fx:id="coldailyfee" prefWidth="90.0" text="Daily Fee" />
+                <TableColumn fx:id="colextra_fee" prefWidth="85.0" text="Extra Fee" />
+                <TableColumn fx:id="colstatus" prefWidth="90.0" text="Status" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </children>
 </AnchorPane>

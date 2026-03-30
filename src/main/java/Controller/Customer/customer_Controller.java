@@ -10,8 +10,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class customer_Controller implements customer_Service{
+
     @Override
-    public void addCustomer(String customer_Id, String name, String phone, String email, String address, String date) {
+    public void addCustomer(String customer_Id, String name, String phone, String email, String address, String created_date) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             String SQL = "INSERT INTO customer VALUES (?,?,?,?,?,?)";
@@ -21,7 +22,7 @@ public class customer_Controller implements customer_Service{
             preparedStatement.setObject(3,phone);
             preparedStatement.setObject(4,email);
             preparedStatement.setObject(5,address);
-            preparedStatement.setObject(6,date);
+            preparedStatement.setObject(6,created_date);
             preparedStatement.execute();
 
         } catch (SQLException e) {
@@ -31,16 +32,16 @@ public class customer_Controller implements customer_Service{
     }
 
     @Override
-    public void updateCustomer(String customer_Id, String name, String phone, String email, String address, String date) {
+    public void updateCustomer(String customer_Id, String name, String phone, String email, String address, String created_date) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            String SQL = "UPDATE customer SET full_name=?, phone=?, email=?, address=?, joined_date=? WHERE customer_id=?";
+            String SQL = "UPDATE customer SET full_name=?, phone=?, email=?, address=?,  created_date=? WHERE customer_id=?";
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setObject(1,name);
             preparedStatement.setObject(2,phone);
             preparedStatement.setObject(3,email);
             preparedStatement.setObject(4,address);
-            preparedStatement.setObject(5,date);
+            preparedStatement.setObject(5, created_date);
             preparedStatement.setObject(6,customer_Id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -53,7 +54,7 @@ public class customer_Controller implements customer_Service{
     public void deleteCustomer(String customer_Id) {
         try {
             Connection connection = DBConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("DELETE FROM customer WHERE customer_Id=?");
+            PreparedStatement pstm = connection.prepareStatement("DELETE FROM customer WHERE customer_id=?");
             pstm.setString(1, customer_Id);
             pstm.executeUpdate();
         } catch (SQLException e) {
@@ -77,7 +78,7 @@ public class customer_Controller implements customer_Service{
                       resultSet.getString("phone"),
                       resultSet.getString("email"),
                       resultSet.getString("address"),
-                      resultSet.getString("joined_date")
+                      resultSet.getString("joinedDate")
               ));
 
 

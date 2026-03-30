@@ -149,6 +149,7 @@ public class book_Rent_Form_Controller implements Initializable {
         colbook_price.setCellValueFactory(new PropertyValueFactory<>("bookPrice"));
         colfine.setCellValueFactory(new PropertyValueFactory<>("fine"));
         colstatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+        loadrentbook();
         tblrentbook.getSelectionModel().selectedItemProperty().addListener((observable,oldvalue,newvalue)->{
             bookRent_Dto bookRentDto = newvalue;
            if(bookRentDto != null ){

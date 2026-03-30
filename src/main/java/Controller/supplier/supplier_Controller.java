@@ -78,7 +78,7 @@ public class supplier_Controller implements supplier_Service {
 
             while (resultSet.next()) {
                 allsupplierDetails.add(new supplier_Dto(
-                        resultSet.getString("supplierId"),
+                        resultSet.getString("supplier_id"),
                         resultSet.getString("supplierName"),
                         resultSet.getString("email"),
                         resultSet.getString("phone"),

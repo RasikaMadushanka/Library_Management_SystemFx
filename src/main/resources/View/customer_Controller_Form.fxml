@@ -1,38 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="657.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Customer.customer_Form_Controller">
-   <children>
-      <TableView fx:id="tblcustomer" layoutX="43.0" layoutY="386.0" prefHeight="234.0" prefWidth="738.0">
-        <columns>
-          <TableColumn fx:id="colid" prefWidth="75.0" text="Customer Id" />
-          <TableColumn fx:id="colname" prefWidth="108.0" text="Name" />
-            <TableColumn fx:id="colemail" prefWidth="120.800048828125" text="Email" />
-            <TableColumn fx:id="coladdress" prefWidth="163.99996948242188" text="Address" />
-            <TableColumn fx:id="colphone" prefWidth="143.199951171875" text="Phone Number" />
-            <TableColumn fx:id="coldate" minWidth="0.0" prefWidth="126.4000244140625" text="Date" />
-        </columns>
-      </TableView>
-      <TextField fx:id="txtname" layoutX="289.0" layoutY="151.0" />
-      <TextField fx:id="txtemail" layoutX="289.0" layoutY="197.0" />
-      <TextField fx:id="txtid" layoutX="289.0" layoutY="103.0" />
-      <TextField fx:id="txtdate" layoutX="289.0" layoutY="283.0" />
-      <TextField fx:id="txtaddresss" layoutX="289.0" layoutY="240.0" />
-      <Label layoutX="118.0" layoutY="107.0" text="Customer Id" />
-      <Label layoutX="118.0" layoutY="155.0" text="Name" />
-      <Label layoutX="118.0" layoutY="201.0" text="Email" />
-      <Label layoutX="120.0" layoutY="244.0" text="Address" />
-      <Label layoutX="120.0" layoutY="287.0" text="Date" />
-      <Button layoutX="607.0" layoutY="125.0" mnemonicParsing="false" onAction="#btnadd_On_Action" text="Add" />
-      <Button layoutX="607.0" layoutY="305.0" mnemonicParsing="false" onAction="#btndelete_On_Action" text="Delete" />
-      <Button layoutX="605.0" layoutY="206.0" mnemonicParsing="false" onAction="#btnupdate_On_Action" text="Update" />
-      <TextField fx:id="txtphone" layoutX="287.0" layoutY="316.0" />
-      <Label layoutX="118.0" layoutY="320.0" text="Phone" />
-   </children>
+<AnchorPane prefHeight="657.0" prefWidth="907.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Customer.customer_Form_Controller">
+    <children>
+        <VBox layoutX="40.0" layoutY="25.0" spacing="20.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="25.0">
+            <children>
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Customer Management" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                    </children>
+                </VBox>
+
+                <HBox spacing="30.0" VBox.vgrow="NEVER">
+                    <children>
+                        <GridPane hgap="15.0" vgap="15.0" HBox.hgrow="ALWAYS">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="100.0" prefWidth="120.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="300.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Customer Id" textFill="#34495e">
+                                    <font><Font name="System Semibold" size="14.0" /></font>
+                                </Label>
+                                <TextField fx:id="txtid" promptText="Enter ID" style="-fx-background-radius: 5;" GridPane.columnIndex="1" />
+
+                                <Label text="Name" textFill="#34495e" GridPane.rowIndex="1">
+                                    <font><Font name="System Semibold" size="14.0" /></font>
+                                </Label>
+                                <TextField fx:id="txtname" promptText="Enter Name" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label text="Email" textFill="#34495e" GridPane.rowIndex="2">
+                                    <font><Font name="System Semibold" size="14.0" /></font>
+                                </Label>
+                                <TextField fx:id="txtemail" promptText="name@example.com" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label text="Address" textFill="#34495e" GridPane.rowIndex="3">
+                                    <font><Font name="System Semibold" size="14.0" /></font>
+                                </Label>
+                                <TextField fx:id="txtaddresss" promptText="City, Street" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                <Label text="Date" textFill="#34495e" GridPane.rowIndex="4">
+                                    <font><Font name="System Semibold" size="14.0" /></font>
+                                </Label>
+                                <TextField fx:id="txtdate" promptText="YYYY-MM-DD" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                                <Label text="Phone" textFill="#34495e" GridPane.rowIndex="5">
+                                    <font><Font name="System Semibold" size="14.0" /></font>
+                                </Label>
+                                <TextField fx:id="txtphone" promptText="07XXXXXXXX" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            </children>
+                        </GridPane>
+
+                        <VBox alignment="CENTER" prefWidth="180.0" spacing="15.0">
+                            <children>
+                                <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#btnadd_On_Action" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="ADD">
+                                    <padding><Insets bottom="10.0" top="10.0" /></padding>
+                                </Button>
+                                <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#btnupdate_On_Action" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="UPDATE">
+                                    <padding><Insets bottom="10.0" top="10.0" /></padding>
+                                </Button>
+                                <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#btndelete_On_Action" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="DELETE">
+                                    <padding><Insets bottom="10.0" top="10.0" /></padding>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+
+                <TableView fx:id="tblcustomer" prefHeight="234.0" prefWidth="738.0" style="-fx-background-radius: 5; -fx-border-color: #dcdde1;" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colid" prefWidth="100.0" text="Customer Id" />
+                        <TableColumn fx:id="colname" prefWidth="150.0" text="Name" />
+                        <TableColumn fx:id="colemail" prefWidth="150.0" text="Email" />
+                        <TableColumn fx:id="coladdress" prefWidth="160.0" text="Address" />
+                        <TableColumn fx:id="colphone" prefWidth="140.0" text="Phone Number" />
+                        <TableColumn fx:id="coldate" prefWidth="125.0" text="Date" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
